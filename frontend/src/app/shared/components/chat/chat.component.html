@@ -1,0 +1,47 @@
+<div id="chatContainer">
+	<div id="chatComponent" [class.chatComponentLight]="lightTheme">
+		<div id="chatToolbar">
+			
+			<button mat-icon-button id="closeButton">
+				<mat-icon matTooltip="forward">arrow_back_ios</mat-icon>
+			</button>
+			<!-- <button mat-icon-button id="unread">
+				<mat-icon matTooltip="unread" matBadge="7" matBadgeSize="small">chat_bubble</mat-icon>
+			</button>
+			<button mat-icon-button id="notification">
+				<mat-icon matTooltip="notification" matBadge="7" matBadgeSize="small">notifications</mat-icon>
+			</button>
+			<button mat-icon-button id="menu">
+				<mat-icon matTooltip="menu">menu_verticle</mat-icon>
+			</button> -->
+		</div>
+		<div class="message-wrap" #chatScroll>
+			<div *ngFor="let data of messageList" class="message" [ngClass]="data.isLocal ? 'right' : 'left'">
+				<img class="user-img" [src]="data.userAvatar" />
+				<div class="msg-detail">
+					<div class="msg-info">
+						<p>{{ data.nickname }}</p>
+					</div>
+					<div class="msg-content">
+						<span class="triangle"></span>
+						<p class="text" [innerHTML]="data.message | linkify"></p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="messageInput">
+			<input #chatInput placeholder="Write a" autocomplete="off" (keypress)="eventKeyPress($event)"
+				[(ngModel)]="message" id="chatInput" />
+			<button mat-icon-button id="sendButton" (click)="sendMessage()">
+				<mat-icon matTooltip="Send Message">mail_outline</mat-icon>
+			</button>
+		</div>
+		<div id="footer">
+			<button mat-icon-button (click)="close()" id="footerBtn">
+				<mat-icon matTooltip="Hide Chatbox">arrow_forward_ios</mat-icon>
+			</button>
+		</div>
+	</div>
+
+</div>

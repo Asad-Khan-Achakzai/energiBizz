@@ -1,0 +1,149 @@
+#parent-container{
+  margin: 0% 2%;
+  box-sizing: border-box;
+  min-width: 1000px;
+}
+.mat-toolbar {
+  background: #fff;
+  color: rgba(0, 0, 0, 0.87);
+}
+.title{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.2%;
+  background-color: #4472c4;
+}
+span{
+  color: white;
+}
+.Buttons{
+  background-color: white; 
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+
+}
+.left{
+ /* margin-right: 10px; */
+ z-index: 2;
+ height: fit-content;
+}
+.right{
+  /* background-color: grey; */
+  z-index: 2;
+  position: relative;
+}
+.energy-bizz-header{
+  background-color: #4472c4;
+  margin: 5px;
+  border-radius: 0%;
+  color: #FFF;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    height: 58px;
+}
+.sidenav{
+  display: block;
+  padding: 0px;
+  height: 222px;
+  margin-bottom: 5px;
+  padding: 10% 0% 0% 33%;
+  background: #f0f0ff;
+  
+  
+}
+.part{
+  background-color: #333333;
+  height: auto;
+  position: absolute;
+  top: 29%;
+  right: 33%;
+  padding: 10px;
+  border-radius: 8px;
+}
+.partList{
+  margin: auto;
+  color: #ffffff;
+  font-size: 16px;
+}
+.participantsNickName{
+  padding: 5px;
+}
+.navBtn{
+  color: white;
+  font-weight: bold;
+  
+  background-color: #4472c4;
+  width: 45%;
+  height: 70%;
+  border-radius: 50%;
+}
+.navBtnText, .navBottomBtnText{
+  margin: 0px;
+  font-weight: 700;
+  color: #333333;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+}
+.navBtnText{
+  padding-left: 16%;
+}
+.navBottomBtnText{
+  padding-left: 3%;
+  line-height: normal;
+}
+.bcl{
+  font-size: 32px;
+  margin: 5px;
+}
+
+@media screen and (max-width: 2000px){
+  .navBtn{
+    /* background-color: red; */
+    width: 50%;
+    height: 60%;
+  }
+}
+ 
+
+@media screen and (max-width: 1800px){
+  .navBtn{
+    /* background-color: green; */
+    width: 50%;
+    height: 50%;
+  }
+}
+  @media screen and (max-width: 1500px){
+    .navBtn{
+      /* background-color: yellow; */
+      width: 45%;
+      height: 40%;
+    }
+}
+@media screen and (max-width: 1100px){
+
+  #parent-container{
+    margin-right: 0%;
+  }
+  .sidenav{
+    padding: 15% 0% 0% 25%;
+  }
+  .navBtn{
+    /* background-color: aquamarine; */
+    margin-top: 10%;
+    width: 45%;
+    height: 30%;
+  }
+
+  .navBtnText{
+    padding-left: 0%;
+  }
+  .navBottomBtnText{
+    padding-right: 3%;
+  }
+}
+.list{
+          padding-bottom: 6px;
+    }
+    

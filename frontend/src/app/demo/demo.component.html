@@ -1,0 +1,48 @@
+<div class="parent-container">
+	<mat-toolbar class="toolbar">
+		<h2 id="toolbarText">ENERGI BIZZ - VIDEO CALLING</h2>
+	</mat-toolbar>
+
+	<div class="list">
+		<div>
+			<div>
+				<h2 class="headings">Create New Meeting</h2>
+			</div>
+			<div>
+				<form [formGroup]="Form" (ngSubmit)="Home_GetNavigationLink()"class="form-container">
+					<mat-form-field class="form-field1" style="width: 30%;">
+						<input type="email" matInput formControlName="email" id="email" placeholder="Enter Your Email" />
+
+					</mat-form-field>
+					<mat-form-field class="form-field1" style="width: 30%;" *ngIf="showSecretKeyCol">
+						<input matInput formControlName="pass" id="pass" placeholder="Enter your Secret key" />
+					</mat-form-field>
+					<mat-form-field class="form-field1" style="width: 30%;" *ngIf="showSecretKeyCol">
+						<input matInput formControlName="passCode" id="pass" placeholder="Enter 6 digit Pass code" />
+					</mat-form-field>
+					<a *ngIf="link" class="link" mat-button target="_blank" [href]="link">Please click here to join the
+						meeting </a>
+					<button [disabled]="!Form.valid" type="submit" style="display:block">Submit</button>
+				</form>
+			</div>
+			<div>
+				<h2 class="headings">Get Active Sessions</h2>
+			</div>
+			<div class="session-container">
+				<div class="session-btn">
+					<mat-form-field class="form-field1" style="width: 45%;">
+						<input matInput  [(ngModel)]="getAllSessionsKey"
+						[ngModelOptions]="{ standalone: true }" placeholder="Enter your Secret key" />
+					</mat-form-field>
+					<button type="submit" style="display:block" (click)="Home_GetAllSessions()">Get All sessions</button>
+				</div>
+				<div>
+					<mat-form-field>
+						<textarea matInput [(ngModel)]="getAllSessionsResponse"
+							[ngModelOptions]="{ standalone: true }"></textarea>
+					</mat-form-field>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

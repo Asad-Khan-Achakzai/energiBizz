@@ -1,0 +1,56 @@
+2021-02-16 02:06:14:[error]: "Database is not responding: connect EHOSTUNREACH 192.168.0.109:3306"
+2021-02-16 02:08:49:[info]: "Database Connected"
+2021-02-16 02:08:53:[info]: "/call/create called"
+2021-02-16 02:08:53:[info]: {"email":"ali@gmail.com","key":"$2a$10$SNQDgkvhrHR5clMmBNHHIuoP5Creunt4fmchm/8VGg/kga6J4snZW","passCode":"1234546"}
+2021-02-16 02:08:54:[info]: "createSession Reponse"
+2021-02-16 02:08:54:[info]: {"id":"EnergiBizz_fv5-wPbA8","createdAt":1613466534111}
+2021-02-16 02:08:55:[info]: "createToken Reponse"
+2021-02-16 02:08:55:[info]: {"id":"wss://eb-vc-dev.trilloapps.com?sessionId=EnergiBizz_fv5-wPbA8&token=tok_Pw1hqirGKN7L93rH&role=PUBLISHER&version=2.15.0&coturnIp=35.225.227.44&turnUsername=QLGCDB&turnCredential=jqb3wp","session":"EnergiBizz_fv5-wPbA8","role":"PUBLISHER","data":"","token":"wss://eb-vc-dev.trilloapps.com?sessionId=EnergiBizz_fv5-wPbA8&token=tok_Pw1hqirGKN7L93rH&role=PUBLISHER&version=2.15.0&coturnIp=35.225.227.44&turnUsername=QLGCDB&turnCredential=jqb3wp"}
+2021-02-16 02:08:55:[info]: {"code":200,"oMessage":"Successful","data":"https://192.168.0.125:4200/#/EnergiBizz_fv5-wPbA8","sessionId":"EnergiBizz_fv5-wPbA8"}
+2021-02-16 02:09:05:[info]: "/call/checkSessionId called"
+2021-02-16 02:09:05:[info]: {"sessionId":"EnergiBizz_fv5-wPbA8"}
+2021-02-16 02:09:05:[info]: "Database response "
+2021-02-16 02:09:05:[info]: [{"ID":"EnergiBizz_fv5-wPbA8","IsLocked":0,"OwnerEmail":"ali@gmail.com","PassCode":"1234546"}]
+2021-02-16 02:09:05:[info]: {"sMessage":"Session  exist","isLocked":0,"OwnerEmail":"ali@gmail.com","PassCode":"1234546"}
+2021-02-16 02:09:05:[info]: "/call/LockSession called"
+2021-02-16 02:09:05:[info]: {"sessionId":"EnergiBizz_fv5-wPbA8","email":""}
+2021-02-16 02:09:05:[info]: "Database response "
+2021-02-16 02:09:05:[info]: [{"OwnerEmail":"ali@gmail.com","IsMuted":0}]
+2021-02-16 02:09:06:[info]: "EnergyBizzService_GetActiveSession response "
+2021-02-16 02:09:06:[info]: {"sessionId":"EnergiBizz_fv5-wPbA8","createdAt":1613466534111,"mediaMode":"ROUTED","recordingMode":"MANUAL","defaultOutputMode":"COMPOSED","defaultRecordingLayout":"BEST_FIT","customSessionId":"EnergiBizz_fv5-wPbA8","connections":{"numberOfElements":0,"content":[]},"recording":false}
+2021-02-16 02:09:06:[info]: {"oMessage":"successful","data":"subscriber"}
+2021-02-16 02:09:15:[info]: "/call/IsAlive called"
+2021-02-16 02:09:15:[info]: "Database response "
+2021-02-16 02:09:15:[info]: [{"IPAddress":"https://35.225.227.44"}]
+2021-02-16 02:09:27:[info]: "/call/create called"
+2021-02-16 02:09:27:[info]: {"email":"ali@gmail.com","key":"$2a$10$ozGAJOaPwsR.3COGVjl.aORPLY8OjV8TfZAbMthpVm0Gk13r3X.16","passCode":"123456"}
+2021-02-16 02:09:28:[info]: "createSession Reponse"
+2021-02-16 02:09:28:[info]: {"id":"EnergiBizz_CpdjDNU1j","createdAt":1613466568547}
+2021-02-16 02:09:29:[info]: "createToken Reponse"
+2021-02-16 02:09:29:[info]: {"id":"wss://eb-vc-dev.trilloapps.com?sessionId=EnergiBizz_CpdjDNU1j&token=tok_Wl4olnr6BBbVcqK6&role=PUBLISHER&version=2.15.0&coturnIp=35.225.227.44&turnUsername=HCFTUQ&turnCredential=ifvqyu","session":"EnergiBizz_CpdjDNU1j","role":"PUBLISHER","data":"","token":"wss://eb-vc-dev.trilloapps.com?sessionId=EnergiBizz_CpdjDNU1j&token=tok_Wl4olnr6BBbVcqK6&role=PUBLISHER&version=2.15.0&coturnIp=35.225.227.44&turnUsername=HCFTUQ&turnCredential=ifvqyu"}
+2021-02-16 02:09:29:[info]: {"code":200,"oMessage":"Successful","data":"https://192.168.0.125:4200/#/EnergiBizz_CpdjDNU1j","sessionId":"EnergiBizz_CpdjDNU1j"}
+2021-02-16 02:09:38:[info]: "/call/checkSessionId called"
+2021-02-16 02:09:38:[info]: {"sessionId":"EnergiBizz_CpdjDNU1j"}
+2021-02-16 02:09:38:[info]: "Database response "
+2021-02-16 02:09:38:[info]: [{"ID":"EnergiBizz_CpdjDNU1j","IsLocked":0,"OwnerEmail":"ali@gmail.com","PassCode":"123456"}]
+2021-02-16 02:09:38:[info]: {"sMessage":"Session  exist","isLocked":0,"OwnerEmail":"ali@gmail.com","PassCode":"123456"}
+2021-02-16 02:09:38:[info]: "/call/LockSession called"
+2021-02-16 02:09:38:[info]: {"sessionId":"EnergiBizz_CpdjDNU1j","email":""}
+2021-02-16 02:09:38:[info]: "Database response "
+2021-02-16 02:09:38:[info]: [{"OwnerEmail":"ali@gmail.com","IsMuted":0}]
+2021-02-16 02:09:40:[info]: "EnergyBizzService_GetActiveSession response "
+2021-02-16 02:09:40:[info]: {"sessionId":"EnergiBizz_CpdjDNU1j","createdAt":1613466568547,"mediaMode":"ROUTED","recordingMode":"MANUAL","defaultOutputMode":"COMPOSED","defaultRecordingLayout":"BEST_FIT","customSessionId":"EnergiBizz_CpdjDNU1j","connections":{"numberOfElements":0,"content":[]},"recording":false}
+2021-02-16 02:09:40:[info]: {"oMessage":"successful","data":"subscriber"}
+2021-02-16 02:09:40:[info]: "/call/create_subscriber called"
+2021-02-16 02:09:40:[info]: {"sessionId":"EnergiBizz_CpdjDNU1j"}
+2021-02-16 02:09:42:[info]: "/call/create_subscriber called"
+2021-02-16 02:09:42:[info]: {"sessionId":"EnergiBizz_CpdjDNU1j"}
+2021-02-16 02:10:18:[info]: "/call/IsAlive called"
+2021-02-16 02:10:18:[info]: "Database response "
+2021-02-16 02:10:18:[info]: [{"IPAddress":"https://35.225.227.44"}]
+2021-02-16 02:11:18:[info]: "/call/IsAlive called"
+2021-02-16 02:11:18:[info]: "Database response "
+2021-02-16 02:11:18:[info]: [{"IPAddress":"https://35.225.227.44"}]
+2021-02-16 02:12:18:[info]: "/call/IsAlive called"
+2021-02-16 02:12:18:[info]: "Database response "
+2021-02-16 02:12:18:[info]: [{"IPAddress":"https://35.225.227.44"}]

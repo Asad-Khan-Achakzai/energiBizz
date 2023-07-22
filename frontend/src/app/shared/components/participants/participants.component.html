@@ -1,0 +1,19 @@
+
+<div id="participantContainer">
+	<div id="participantComponent">
+		<div id="chatToolbar">
+			<h2 id="toolbarText">Participants</h2>
+		</div>
+		<div class="participantList">
+			 <ul *ngFor="let user of tokenService.aParticipantsList">
+				<li> <p>{{ user?.nickname}}</p></li>
+			</ul>
+		</div>
+		<div id="footer">
+			<button mat-icon-button (click)="close()" id="footerBtn">
+				<mat-icon matTooltip="Hide Chatbox">arrow_forward_ios</mat-icon>
+			</button>
+		</div>
+	</div>
+
+</div>

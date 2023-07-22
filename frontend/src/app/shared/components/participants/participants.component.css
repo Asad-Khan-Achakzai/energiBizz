@@ -1,0 +1,56 @@
+
+ #chatContainer {
+	position: absolute;
+	top: 0;
+	z-index: 4;
+	width: 100%;
+	height: calc(100% - 100px);
+  }
+  input {
+	font-family: 'Ubuntu', sans-serif;
+  }
+  mat-icon{
+	font-size: 32px;
+	color: #2a2b2b;
+	font-weight: lighter;
+  }
+  #chatToolbar {
+	height: 64px;
+	background-color: #d8d4cf;
+	box-sizing: border-box;
+	font-weight: bold;
+	font-size: 14px;
+	text-align: center;
+	padding-top: 4px;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+	color: #ffffff;
+  }
+  .participantList{
+	  text-align: center;
+  }
+  ul{
+	  list-style: none;
+  }
+  
+  #chatComponent {
+	background-color: #ffffff;
+	position: absolute;
+	 z-index: 99999;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	width: calc(100% - 10px); 
+	height: 100%;
+	width: 100%;
+	border-radius: 20px;
+  }
+  
+  #footer{
+	padding: 0px;
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+  }

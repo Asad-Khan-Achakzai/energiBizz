@@ -1,0 +1,159 @@
+<div display="flex" fxLayout id="parent-container">
+	<div fxFlex="80%" class="left">
+		<mat-toolbar>
+			<mat-toolbar-row class="title">
+				<span>ENERGI BIZZ - VIDEO CALLING</span>
+			</mat-toolbar-row>
+			<mat-toolbar-row class="Buttons" FxLayoutAlign="space-between center">
+				<!-- Mute all button -->
+				<button mat-icon-button (click)="Toolbar_toggleMicrophoneAll()" [disabled]="isConnectionLost"
+					*ngIf="isShowRecord" class="energy-bizz-header" fxFlex fxFill>
+					<mat-icon *ngIf="!isWebcamAudioEnabledAll" matTooltip="Mute all audio">mic</mat-icon>
+					<mat-icon *ngIf="isWebcamAudioEnabledAll" color="warn" matTooltip="Unmute all audio">mic_off
+					</mat-icon>
+					<span *ngIf="!isWebcamAudioEnabledAll"> Mute ALL</span>
+					<span *ngIf="isWebcamAudioEnabledAll"> UnMute ALL</span>
+				</button>
+				<!-- Lock session -->
+				<button mat-icon-button (click)="Toolbar_LockMeeting()" [disabled]="isConnectionLost"
+					*ngIf="isShowRecord" class="energy-bizz-header" fxFlex fxFill>
+					<mat-icon *ngIf="!bIsSessionLocked" color="warn" matTooltip="Unlock session">lock</mat-icon>
+					<mat-icon *ngIf="bIsSessionLocked" matTooltip="Lock session">lock_open
+					</mat-icon>
+					<span *ngIf="bIsSessionLocked"> Lock Meeting</span>
+					<span *ngIf="!bIsSessionLocked"> Unlock Meeting</span>
+				</button>
+
+				<!-- Video calling button -->
+				<!-- <button id="navCameraButton" mat-icon-button (click)="toggleCamera()" [disabled]="isConnectionLost"
+					*ngIf="!this.ovSettings || (hasVideoDevices && (this.ovSettings | hasVideo))"
+					class="energy-bizz-header" fxFlex fxFill>
+					<mat-icon *ngIf="isWebcamVideoEnabled" matTooltip="Mute your cam">videocam</mat-icon>
+					<mat-icon *ngIf="!isWebcamVideoEnabled" color="warn" matTooltip="Unmute your cam">videocam_off
+					</mat-icon>
+					<span> Video Calling</span>
+				</button> -->
+
+
+				<!-- Screenshare button -->
+				<button id="navScreenButton" mat-icon-button (click)="toggleScreenShare()" [disabled]="isConnectionLost"
+					*ngIf="ovSettings | hasScreenSharing" class="energy-bizz-header" fxFlex fxFill>
+					<mat-icon *ngIf="isScreenShareEnabled" matTooltip="Screen share" color="warn">stop_screen_share
+					</mat-icon>
+					<mat-icon *ngIf="!isScreenShareEnabled" matTooltip="Stop sharing">screen_share</mat-icon>
+					<span> Screen</span>
+				</button>
+				<!-- Camera button -->
+				<button id="navCameraButton" mat-icon-button (click)="toggleCamera()" [disabled]="isConnectionLost"
+					*ngIf="!this.ovSettings || (hasVideoDevices && (this.ovSettings | hasVideo))"
+					class="energy-bizz-header" fxFlex fxFill>
+					<mat-icon *ngIf="isWebcamVideoEnabled" matTooltip="Mute your cam">videocam</mat-icon>
+					<mat-icon *ngIf="!isWebcamVideoEnabled" color="warn" matTooltip="Unmute your cam">videocam_off
+					</mat-icon>
+					<span> Camera</span>
+				</button>
+				<!-- Mic button -->
+				<button id="navMicrophoneButton" mat-icon-button (click)="toggleMicrophone()"
+					[disabled]="isConnectionLost" *ngIf="hasAudioDevices && (ovSettings | hasAudio)"
+					class="energy-bizz-header" fxFlex fxFill>
+					<mat-icon *ngIf="isWebcamAudioEnabled" matTooltip="Mute your audio">mic</mat-icon>
+					<mat-icon *ngIf="!isWebcamAudioEnabled" color="warn" matTooltip="Unmute your audio">mic_off
+					</mat-icon>
+					<span> Mic</span>
+				</button>
+				<!-- Copy Link button -->
+				<button mat-icon-button class="energy-bizz-header" fxFlex fxFill (click)="getsessionid()">
+					<mat-icon matTooltip="Copy Link"> insert_link</mat-icon>
+					<span> Copy Link</span>
+				</button>
+				<!-- Leave seassion button -->
+				<button mat-icon-button (click)="leaveSession()" id="navLeaveButton" *ngIf="ovSettings | hasExit"
+					class="energy-bizz-header" fxFlex fxFill>
+					<mat-icon color="warn" matTooltip="Leave the session">power_settings_new</mat-icon>
+					<span> Leave Session</span>
+				</button>
+
+				<!-- Live chat button -->
+
+				<button mat-icon-button (click)="toggleChat()" [disabled]="isConnectionLost"
+					*ngIf="ovSettings | hasChat" class="energy-bizz-header" fxFlex fxFill>
+					<mat-icon matBadge="{{ newMessagesNum }}" [matBadgeHidden]="newMessagesNum === 0"
+						matBadgePosition="above before" matTooltip="Chat" matBadgeColor="accent">chat</mat-icon>
+					<span> Chat</span>
+				</button>
+
+			</mat-toolbar-row>
+		</mat-toolbar>
+	</div>
+	<div fxFlex="20%" class="right">
+		<mat-toolbar>
+			<mat-toolbar-row class="sidenav">
+
+				<!-- All team button -->
+				<button id="navCameraButton" mat-icon-button (click)="Toolbar_Participant()"
+					[disabled]="isConnectionLost"
+					 class="navBtn">
+					<mat-icon matBadge="{{ tokenService.aParticipantsList?.length }}" matBadgeSize="small"
+						matBadgePosition="above after" matBadgeColor="accent">people</mat-icon>
+					<!-- <mat-icon *ngIf="isWebcamVideoEnabled" matTooltip="Mute your cam" class="bcl">groups</mat-icon>
+					<mat-icon *ngIf="!isWebcamVideoEnabled" color="warn" matTooltip="Unmute your cam" class="bcl">
+						groups_off</mat-icon> -->
+
+				</button>
+				<p class="navBtnText"> All team</p>
+			</mat-toolbar-row>
+			
+
+			<mat-toolbar-row class="sidenav">
+				<!-- Setting button -->
+				<button id="navCameraButton" mat-icon-button (click)="toggleCamera()" [disabled]="true"
+					*ngIf="!this.ovSettings || (hasVideoDevices && (this.ovSettings | hasVideo))" class="navBtn">
+					<mat-icon *ngIf="isWebcamVideoEnabled" matTooltip="Mute your cam" class="bcl">settings</mat-icon>
+					<mat-icon *ngIf="!isWebcamVideoEnabled"  matTooltip="Unmute your cam" class="bcl">
+						settings_off</mat-icon>
+
+				</button>
+				<p class="navBtnText"> Setting</p>
+			</mat-toolbar-row>
+			<mat-toolbar-row class="sidenav" *ngIf="showPlayBtn  && isShowRecord">
+
+				<!-- Video Recording button -->
+				<button id="startRecordingButton" mat-icon-button (click)="startRecording()" class="navBtn">
+					<mat-icon class="icon" matTooltip="Start recording">fiber_manual_record</mat-icon>
+
+				</button>
+				<p class="navBottomBtnText"> Start Recording</p>
+			</mat-toolbar-row>
+			<mat-toolbar-row class="sidenav" *ngIf="!showPlayBtn   && isShowRecord">
+
+				<!-- Video Recording button -->
+				<button id="stopRecordingButton" mat-icon-button (click)="stopRecording()" class="navBtn">
+					<mat-icon color="warn" matTooltip="Stop recording" class="bcl">stop</mat-icon>
+
+				</button>
+				<p class="navBottomBtnText"> Stop Recording</p>
+			</mat-toolbar-row>
+			<mat-toolbar-row class="sidenav">
+
+				<!-- Script Print Language button -->
+				<button id="navCameraButton" mat-icon-button (click)="toggleCamera()" [disabled]="true"
+					*ngIf="!this.ovSettings || (hasVideoDevices && (this.ovSettings | hasVideo))" class="navBtn">
+					<mat-icon *ngIf="isWebcamVideoEnabled" matTooltip="Mute your cam" class="bcl">g_translate</mat-icon>
+					<mat-icon *ngIf="!isWebcamVideoEnabled" matTooltip="Unmute your cam" class="bcl">
+						g_translate_off</mat-icon>
+
+				</button>
+				<p class="navBottomBtnText"> Script Print Language <br>(Only English)</p>
+			</mat-toolbar-row>
+			
+		</mat-toolbar>
+
+
+		<!-- <div class="part" *ngIf="participants">
+			<h2 class="partList">Participant List</h2>
+			<div *ngFor="let user of tokenService.aParticipantsList">
+				<span class="mail-desc participantsNickName">{{ user?.nickname}}</span>
+			</div>
+		</div> -->
+	</div>
+</div>
